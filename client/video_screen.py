@@ -160,12 +160,9 @@ def start(name: str = None, group: str = None, debug=False, cfg=None) -> None:
                 else:
                     if type(rcx[0] or rcx[1]) == np.float32 or type(rcy[0] or rcy[1]) == np.float32:
                         rcx = tuple(int(x) for x in rcx)
-                        print('here')
                         rcy = tuple(int(y) for y in rcy)
                         cv2.rectangle(frame, rcx, rcy, (0, 0, 255), 1)
                     else:
-                        print(type(rcx[0]),rcy)
-                        print(rcx, rcy)
                         cv2.rectangle(frame, rcx, rcy, (0, 0, 255), 1)
                 cv2.imshow('frame', frame)
         if cv2.waitKey(1) & 0xFF == ord('q'):
